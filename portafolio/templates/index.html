@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <title>Portafolio</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="header__nav main-nav">
+        <ul class="main-nav__list main-list">
+          <li class="main-list__item list-item">
+            <a class="list-item__link" href="#home">Inicio</a>
+          </li>
+          <li class="main-list__item list-item">
+            <a class="list-item__link" href="#about">Acerca de</a>
+          </li>
+          <li class="main-list__item list-item">
+            <a class="list-item__link" href="#skills">Competencias</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+      <!-- Vista previa -->
+      <section class="main__home home" id="home">
+        <h1 class="home__title">Mateo · Proyectos de Python</h1>
+        <p class="home__subtitle">Portafolio de proyectos educativos de Kodland</p>
+      </section>
+      <!-- Acerca de mí -->
+      <section class="main__about about" id="about">
+        <h2 class="about__title">Sobre este portafolio</h2>
+        <div class="about__info info-block">
+          <p class="info-block__text">
+            Aquí se reúnen proyectos educativos de Flask, HTML, CSS, bases de datos, bots y procesamiento de texto. Cada ejemplo incluye su código e instrucciones de ejecución.
+          </p>
+          <img
+            class="info-block__img"
+            src="/static/img/avatar.svg"
+            alt="me"
+            width="250"
+            height="250"
+          />
+        </div>
+      </section>
+      <!-- Sección de competencias -->
+      <section class="main__skills skills" id="skills">
+        <h2 class="skills__title">Competencias</h2>
+        <form action="/" method="POST">
+          <ul class="skills__list skills-list">
+            <li class="skills-list__skill skill">
+              <img
+                class="skill__img"
+                src="https://raw.githubusercontent.com/GitKodland/portfolio-esp/main/static/img/python.png"
+                alt="python"
+                width="150"
+                height="150"
+              />
+              <span class="skill__info">Resumir textos con NLTK</span>
+              <input class="skill__button" type="submit" name="button_python" value="VER PROYECTO">
+            </li>
+            <li class="skills-list__skill skill">
+              <img
+                class="skill__img"
+                src="https://raw.githubusercontent.com/GitKodland/portfolio-esp/main/static/img/discord.png"
+                alt="discord"
+                width="150"
+                height="150"
+              />
+              <span class="skill__info">Comandos de memes y reciclaje</span>
+              <input class="skill__button" type="submit" name="button_discord" value="VER PROYECTO">
+            </li>
+            <li class="skills-list__skill skill">
+              <img
+                class="skill__img"
+                src="https://raw.githubusercontent.com/GitKodland/portfolio-esp/main/static/img/html.png"
+                alt="html"
+                width="150"
+                height="150"
+              />
+              <span class="skill__info">Diseñar páginas adaptables</span>
+              <input class="skill__button" type="submit" name="button_html" value="VER PROYECTO">
+            </li>
+            <li class="skills-list__skill skill">
+              <img
+                class="skill__img"
+                src="https://raw.githubusercontent.com/GitKodland/portfolio-esp/main/static/img/db.webp"
+                alt="SQL"
+                width="150"
+                height="150"
+              />
+              <span class="skill__info">Guardar entradas privadas en SQLite</span>
+              <input class="skill__button" type="submit" name="button_db" value="VER PROYECTO">
+            </li>
+          </ul>
+        </form>
+        {% if project %}<div class="skills__project project" id="project"><h3>{{project[0]}}</h3><p>Consulta el código y sus instrucciones de ejecución.</p><a class="project__link" href="https://github.com/m2t30b-collab/kodland-python-pro/tree/main/{{project[1]}}">Abrir proyecto en GitHub</a></div>{% endif %}
+      </section>
+      <!-- Formulario de contacto -->
+      <section class="main__feedback feedback" id="feedback">
+        <h2 class="feedback__title">Comentarios</h2>{% if feedback_received %}<p>Comentario guardado. No se ha enviado ningún correo.</p>{% endif %}
+        <form action="/feedback" method="POST" class="feedback__form form">
+          <label for="email">
+            <input type="email" class="form__input" name="email" id="email" placeholder="Tu correo" required>
+          </label>
+          <label for="text">
+            <textarea name="text" class="form__input" id="text" cols="70" rows="10" required placeholder="Escribe tu comentario"></textarea>
+          </label>
+          <button class="form__button" type="submit">Guardar comentario</button>
+        </form>
+      </section>
+    </main>
+    <!-- Pie de página con enlaces a redes sociales -->
+    <footer><a href="https://github.com/m2t30b-collab/kodland-python-pro">Repositorio de proyectos</a>
+
+    </footer>
+  </body>
+</html>

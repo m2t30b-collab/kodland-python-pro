@@ -1,0 +1,1 @@
+{% extends 'base.html' %}{% block content %}<h1>Nueva entrada</h1><form action="/form_create" method="post"><label>Título<input name="title" required maxlength="200"></label><label>Subtítulo<input name="subtitle" required maxlength="300"></label><label>Texto<textarea name="text" rows="14" required></textarea></label><button>Guardar entrada</button></form>{% endblock %}

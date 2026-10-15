@@ -1,0 +1,1 @@
+{% extends 'base.html' %}{% block content %}<h1>{{title}}</h1><form method="post"><label>Correo<input type="email" name="email" required></label><label>Contraseña<input type="password" name="password" required></label><p role="alert">{{error}}</p><button>Continuar</button></form><a href="/register">Crear una cuenta</a>{% endblock %}

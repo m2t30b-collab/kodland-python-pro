@@ -1,0 +1,14 @@
+1. ¿Qué es una base de datos?
+Es un conjunto organizado de información que permite guardar, consultar y modificar datos. SQLite almacena esta información en un archivo.
+
+2. ¿Cómo creamos tablas?
+Definimos modelos de SQLAlchemy y ejecutamos db.create_all() dentro del contexto de la aplicación. Las columnas declaran el tipo de cada dato y una clave primaria identifica cada fila.
+
+3. ¿Qué son las clases?
+Son plantillas para crear objetos con datos y comportamiento. Card representa una entrada: título, subtítulo, texto y usuario propietario.
+
+4. ¿Cómo conectamos la BD a HTML?
+Una ruta de Flask consulta Card.query, pasa los objetos a render_template y Jinja los muestra con variables y bucles. Para guardar una entrada usamos db.session.add(card) y db.session.commit().
+
+5. Reflexión sobre la utilidad
+Separar los datos de la presentación permite conservar las entradas después de cerrar la aplicación. El aislamiento por usuario hace que cada diario muestre únicamente sus propias notas.
