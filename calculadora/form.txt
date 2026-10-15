@@ -1,0 +1,5 @@
+Nombre: Alumno de prueba
+Email: prueba@example.com
+Direccion: Direccion ficticia
+Fecha: 2026-10-15
+---
